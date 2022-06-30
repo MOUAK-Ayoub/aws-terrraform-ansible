@@ -15,9 +15,7 @@ aws configure
 Create  a policy from the json file
 Create a user terraform and affect the policy to it (no need for aws management cosnole access)
 
-save access keys
-AKIAYATXH6Z6VTUOXSF6
-BPX/mJCqbhKd/aDdzjbmbc1QLTOVEVEF9UWxfflP
+
 
 
 aws s3api create-bucket --bucket terraformstatefile2022
