@@ -10,5 +10,7 @@ provider "aws" {
       region=var.region-worker
       profile=var.profile
       alias="region-worker"
+
 }
+
 
