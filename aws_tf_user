@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 aws iam create-policy --policy-name TfUserPolicy \
  --policy-document file:///home/ansible/aws-terrraform-ansible/TfUserPolicy.json
