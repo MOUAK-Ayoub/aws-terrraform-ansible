@@ -12,10 +12,3 @@ sudo ./aws/install -i /usr/local/aws-cli -b /usr/local/bin
 aws --version
 aws configure
 
-Create  a policy from the json file
-Create a user terraform and affect the policy to it (no need for aws management cosnole access)
-
-
-
-
-aws s3api create-bucket --bucket terraformstatefile2022
