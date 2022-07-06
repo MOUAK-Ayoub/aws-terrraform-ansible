@@ -59,10 +59,3 @@ resource "aws_subnet" "subnet_worker_1" {
   cidr_block = "192.168.1.0/24"
 }
 
-
-resource "aws_subnet" "subnet_worker_2" {
-  provider = aws.region-worker
-  availability_zone = element(data.aws_availability_zones.azs.names,1)
-  vpc_id = aws_vpc.aws_vpc_worker.id
-  cidr_block = "192.168.2.0/24"
-}
