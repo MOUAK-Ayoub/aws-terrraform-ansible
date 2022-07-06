@@ -12,6 +12,6 @@ aws iam create-user --user-name terraform
 sleep 5s
 
 aws iam attach-user-policy --policy-arn $terraform_policy_arn --user-name terraform
-sleep 5s
+sleep 30s
 
 aws s3api create-bucket --bucket terraformstatefile2022
