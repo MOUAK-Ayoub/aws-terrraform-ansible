@@ -31,14 +31,14 @@ resource "aws_route_table" "master-route" {
         ignore_changes=all
     }
 
-    tags {
+    tags = {
         Name= "Route table of the master vpc"
     }
 }
 
 resource "aws_route_table" "worker-route" {
-    provider = aws.region-master
-    vpc_id = aws_vpc.aws_vpc_master.id
+    provider = aws.region-worker
+    vpc_id = aws_vpc.aws_vpc_worker
     route {
         cidr_block = "0.0.0.0/0"
         gateway_id = aws_internet_gateway.igw_worker.id
@@ -46,14 +46,14 @@ resource "aws_route_table" "worker-route" {
     }
     route {
         cidr_block = "10.0.1.0/24"
-        vpc_peering_connection_id = aws_vpc_peering_connection.worker.id
+        vpc_peering_connection_id = aws_vpc_peering_connection_accepter.worker-peer.id
 
     }
     lifecycle {
         ignore_changes=all
     }
-
-    tags {
+    
+    tags = {
         Name= "Route table of the worker vpc"
     }
 }

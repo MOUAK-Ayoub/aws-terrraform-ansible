@@ -2,8 +2,9 @@ resource "aws_security_group" "sg-alb" {
 
     provider = aws.region-master
     vpc_id = aws_vpc.aws_vpc_master
-    Name="lb-sg"
-    Decription="Allow 80 and 443 port traffic to alb"
+    name="lb-sg"
+    decription="Allow 80 and 443 port traffic to alb"
+
     ingress   {
       from_port = 80
       to_port = 80
@@ -30,8 +31,8 @@ resource "aws_security_group" "sg-jenkins-master" {
 
     provider = aws.region-master
     vpc_id = aws_vpc.aws_vpc_master.id
-    Name="jenkins-master-sg"
-    Decription="Allow ssh to the master  and 8080   and 443 port traffic from alb and all trafic from the worker"
+    name="jenkins-master-sg"
+    decription="Allow ssh to the master  and 8080   and 443 port traffic from alb and all trafic from the worker"
     ingress {
       from_port = 22
       to_port = 22
@@ -66,12 +67,12 @@ resource "aws_security_group" "sg-jenkins-master" {
 }
 
 
-resource "aws_security_group" "sg-jenkins-master" {
+resource "aws_security_group" "sg-jenkins-worker" {
 
     provider = aws.region-worker
     vpc_id = aws_vpc.aws_vpc_worker.id
-    Name="jenkins-master-sg"
-    Decription="Allow ssh to the jenkins worker  and trafic from master"
+    name="jenkins-master-sg"
+    decription="Allow ssh to the jenkins worker  and trafic from master"
     ingress {
       from_port = 22
       to_port = 22
