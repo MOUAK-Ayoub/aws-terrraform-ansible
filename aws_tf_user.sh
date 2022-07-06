@@ -1,6 +1,7 @@
 #!/bin/sh
 
-aws iam create-policy --policy-name TfUserPolicy \
+aws iam create-policy \
+ --policy-name TfUserPolicy \
  --policy-document file:///home/ansible/aws-terrraform-ansible/TfUserPolicy.json
 
 terraform_policy_arn=$(aws iam list-policies --query 'Policies[?PolicyName==`"TfUserPolicy"`].Arn' --output text)
