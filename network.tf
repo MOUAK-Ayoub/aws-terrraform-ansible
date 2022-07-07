@@ -53,7 +53,7 @@ resource "aws_subnet" "subnet_master_2" {
 }
 
 resource "aws_subnet" "subnet_worker_1" {
-  provider          = aws.region-workers
+  provider          = aws.region-worker
   vpc_id            = aws_vpc.aws_vpc_worker.id
   cidr_block        = "192.168.1.0/24"
 }
