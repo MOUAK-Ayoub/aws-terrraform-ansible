@@ -13,7 +13,8 @@ aws --version
 
 git clone git_url
 
-chmod +x 
+chmod +x filename
 
+ssh-keygen -t rsa
 aws configure
 

@@ -23,7 +23,7 @@ resource "aws_vpc" "aws_vpc_worker" {
   enable_dns_hostnames = true
   enable_dns_support   = true
   tags = {
-    Name = "vpc_mworker_jenkins"
+    Name = "vpc_worker_jenkins"
   }
 
 }
