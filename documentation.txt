@@ -1,0 +1,18 @@
+# To install terraform and awscli
+
+Execute the commands on the terraform_install.sh
+
+# add the keys to connect to your aws account
+aws configure
+
+
+#To create the terraform user , attach  a policy to it and create the bucket of the state file
+Execute the script ./aws_tf_user.sh
+
+# to know how many resources will be created
+terraform plan 
+
+# To create resources
+
+terraform init
+terraform apply --auto-approve
